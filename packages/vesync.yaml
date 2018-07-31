@@ -1,0 +1,10 @@
+switch:
+  - platform: vesync 
+    username: !secret vesync_username
+    password: !secret vesync_password
+
+group:
+  VeSync Outlet:
+    entities:
+      - switch.front_room_light
+      - switch.mini_smart_outlet_1

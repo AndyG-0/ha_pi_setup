@@ -1,0 +1,15 @@
+zone.home:
+  latitude: 40.046696
+  longitude: -83.14892
+device_tracker.jakesiphone_2:
+  friendly_name: JakesiPhone7
+sensor.breaches_andygilbreathgmailcom:
+  friendly_name: Breaches Andy
+sensor.breaches_courtney822gmailcom:
+  friendly_name: Breaches Courtney
+sensor.disk_use_:
+  friendly_name: Disk Use
+binary_sensor.laylas_play_room_thermostat_fan: {}
+sensor.laylas_play_room_thermostat_target: {}
+sensor.ring_front_door_battery:
+  friendly_name: Front_Door_Battery

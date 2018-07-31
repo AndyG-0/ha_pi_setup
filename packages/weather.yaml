@@ -1,0 +1,9 @@
+# Weather prediction
+sensor:
+  - platform: yr
+    name: Weather
+
+group:
+  Weather:
+    entities:
+      - sensor.yr

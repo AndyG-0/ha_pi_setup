@@ -1,0 +1,11 @@
+apple_tv:
+  - host: 192.168.1.202
+    login_id: !secret appletv_loginid
+    name: Bedroom AppleTV
+    start_off: false
+    credentials: !secret appletv_credentials
+  - host: 192.168.1.10
+    login_id: !secret lr_appletv_loginid
+    name: Living Room AppleTV
+    start_off: false
+    credentials: !secret lr_appletv_credentials

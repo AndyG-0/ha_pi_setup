@@ -1,0 +1,12 @@
+sensor:
+  - platform: haveibeenpwned
+    name: Have I been Pwned
+    email:
+      - andy.gilbreath@gmail.com
+      - courtney822@gmail.com
+
+group:
+  Have I Been Pwned:
+    entities:
+      - sensor.breaches_andygilbreathgmailcom
+      - sensor.breaches_courtney822gmailcom

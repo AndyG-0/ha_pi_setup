@@ -1,0 +1,59 @@
+sensor:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - icon
+      - nearest_storm_distance
+      - precip_type #The type of precipitation occurring.
+      - precip_intensity #The average expected intensity of precipitation occurring.
+      - precip_probability #A value between 0 and 1 which is representing the probability of precipitation.
+      - temperature  #The current temperature.
+      - apparent_temperature #A numerical value representing the apparent (or “feels like”) temperature.
+      - dew_point #The dew point.
+      - wind_speed #The wind speed.
+      - wind_bearing #Where the wind is coming from in degrees, with true north at 0° and progressing clockwise.
+      - cloud_cover #The percentage of sky occluded by clouds.
+      - humidity #The relative humidity.
+      - pressure #The sea-level air pressure in millibars.
+      - visibility #The average visibility.
+      - ozone #The columnar density of total atmospheric ozone in Dobson.
+      - minutely_summary #A human-readable text summary for the next hour.
+      - hourly_summary #A human-readable text summary for the next 24 hours.
+      - daily_summary
+      - temperature_max
+      - temperature_min
+      - apparent_temperature_max
+      - apparent_temperature_min
+      - precip_intensity_max
+      #- uv_index 
+
+
+group:
+  Dark Sky:
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_nearest_storm_distance
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_daily_low_apparent_temperature
+    - sensor.dark_sky_daily_high_apparent_temperature
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_ozone
+    - sensor.dark_sky_minutely_summary
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_daily_summary
+    - sensor.dark_sky_temperature_max
+    - sensor.dark_sky_temperature_min
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_daily_max_precip_intensity

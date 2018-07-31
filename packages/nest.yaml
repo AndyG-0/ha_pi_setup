@@ -1,0 +1,17 @@
+nest:
+  client_id: !secret nest_clientid
+  client_secret: !secret nest_secret
+
+group:
+  Nest:
+    - binary_sensor.laylas_play_room_thermostat_online
+    - sensor.laylas_play_room_thermostat_operation_mode
+    - sensor.laylas_play_room_thermostat_temperature
+    - sensor.laylas_play_room_thermostat_target
+    - binary_sensor.laylas_play_room_thermostat_has_leaf
+    - sensor.laylas_play_room_thermostat_humidity
+    - sensor.laylas_play_room_thermostat_hvac_state
+    - binary_sensor.laylas_play_room_thermostat_is_locked
+    - binary_sensor.laylas_play_room_thermostat_is_using_emergency_heat
+    - sensor.laylas_play_room_thermostat_operation_mode
+    - binary_sensor.laylas_play_room_thermostat_fan

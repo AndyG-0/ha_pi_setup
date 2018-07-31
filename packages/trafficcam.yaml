@@ -1,0 +1,4 @@
+camera:
+  platform: generic
+  still_image_url: http://cmhimg01.dot.state.oh.us/images/CMH/CMH055.jpg
+  name: Traffic 270 and Roberts

@@ -1,0 +1,9 @@
+sensor:
+  - platform: crimereports
+    name: Crime Reports
+    radius: 1000
+
+group:
+  Crime Reports:
+    entities:
+      - sensor.crime_reports

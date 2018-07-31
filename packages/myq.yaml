@@ -1,0 +1,47 @@
+cover:
+  - platform: myq
+    username: !secret myq_user
+    password: !secret myq_password
+    type: liftmaster
+
+homeassistant:
+  customize:
+    #hide the non connected garage
+    cover.myq: 
+      hidden: true
+
+group:
+  Garage Door:
+    - cover.garage_door_opener
+
+automation:
+  
+  - alias: 'Rule - Close garage at 9:30'
+    trigger: 
+      platform: time
+      at: '21:30:00'
+    condition:
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: cover.garage_door_opener
+            state: 'open'
+    action:
+      service: cover.close_cover
+      data:
+        entity_id: cover.garage_door_opener
+
+  - alias: 'Rule - Close garage at 10:30'
+    trigger:
+      platform: time
+      at: '22:30:00'
+    condition:
+      - condition: and
+        conditions:
+          - condition: state
+            entity_id: cover.garage_door_opener
+            state: 'open'
+    action:
+      service: cover.close_cover
+      data:
+        entity_id: cover.garage_door_opener

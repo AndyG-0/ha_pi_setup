@@ -1,0 +1,4 @@
+camera:
+  platform: generic
+  still_image_url: https://icons.wxug.com/data/weather-maps/radar/united-states/dayton-ohio-region-current-radar-animation.gif  
+  name: Columbus, OH

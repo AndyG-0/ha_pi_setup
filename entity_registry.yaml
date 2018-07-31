@@ -1,0 +1,88 @@
+remote.living_room_appletv:
+  name:
+  platform: apple_tv
+  unique_id: aeb463e9449b1e740d3e70ecc8caf458775e3b8bef96762a694d181e9abd7a67
+remote.bedroom_appletv:
+  name:
+  platform: apple_tv
+  unique_id: df47df6482954b5f61dd458b6e12400fd9a1311fe1f1a93a311d8c802e0614f5
+climate.laylas_play_room:
+  name:
+  platform: nest
+  unique_id: Squf7IvmU_ALyj0gkMQMhTYjMudh5ziC
+media_player.living_room_appletv:
+  name:
+  platform: apple_tv
+  unique_id: aeb463e9449b1e740d3e70ecc8caf458775e3b8bef96762a694d181e9abd7a67
+media_player.bedroom_appletv:
+  name:
+  platform: apple_tv
+  unique_id: df47df6482954b5f61dd458b6e12400fd9a1311fe1f1a93a311d8c802e0614f5
+light.living_room_light_1:
+  name:
+  platform: lifx
+  unique_id: d0:73:d5:25:04:54
+light.living_room_light_2:
+  name:
+  platform: lifx
+  unique_id: d0:73:d5:25:6e:cb
+light.kitchen_light_1:
+  name:
+  platform: lifx
+  unique_id: d0:73:d5:25:6f:0e
+light.kitchen_light_2:
+  name:
+  platform: lifx
+  unique_id: d0:73:d5:24:de:19
+sensor.courtneys_iphone_2_battery_level:
+  name:
+  platform: ios
+  unique_id: level_courtneys_iphone_2
+sensor.courtneys_iphone_2_battery_state:
+  name:
+  platform: ios
+  unique_id: state_courtneys_iphone_2
+sensor.andys_iphone_x_battery_state:
+  name:
+  platform: ios
+  unique_id: state_Andy’s iPhone x
+sensor.andys_iphone_x_battery_level:
+  name:
+  platform: ios
+  unique_id: level_Andy’s iPhone x
+sensor.andys_iphone_6_battery_level:
+  name:
+  platform: ios
+  unique_id: level_andys_iphone_6
+sensor.andys_iphone_6_battery_state:
+  name:
+  platform: ios
+  unique_id: state_andys_iphone_6
+media_player.tv:
+  name:
+  platform: cast
+  unique_id: 0193f6fa-8953-8be3-68c6-7a5adf26bd81
+switch.mini_smart_outlet_1:
+  name:
+  platform: vesync
+  unique_id: cc747846-890d-4590-8940-4dfcdef26516
+switch.front_room_light:
+  name:
+  platform: vesync
+  unique_id: b0f3baab-5d53-40e5-87f7-1e044fcb6fb2
+media_player.apple_tv_2:
+  name:
+  platform: apple_tv
+  unique_id: b39147e2790f607cb59717fe1deb7d755085f0743fdf82bb472831e237c7c18c
+remote.apple_tv_2:
+  name:
+  platform: apple_tv
+  unique_id: b39147e2790f607cb59717fe1deb7d755085f0743fdf82bb472831e237c7c18c
+remote.living_room_appletv_2:
+  name:
+  platform: apple_tv
+  unique_id: 805ebf201c523f69376591c6ce5ceb3f12ebcfedad297c5f175a380426cf0b42
+media_player.living_room_appletv_2:
+  name:
+  platform: apple_tv
+  unique_id: 805ebf201c523f69376591c6ce5ceb3f12ebcfedad297c5f175a380426cf0b42

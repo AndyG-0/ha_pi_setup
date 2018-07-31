@@ -1,0 +1,208 @@
+homeassistant:
+  customize:
+    group.Who_is_home:
+      order: 1
+    device_tracker.jennagihsiphone_2:
+      friendly_name: Jenna
+    device_tracker.3c2ef9db0cbf:  
+      friendly_name: Andy
+    device_tracker.jake:
+      friendly_name: Jake
+    device_tracker.LaylasiPad2:
+      friendly_name: Layla
+    device_tracker.CourtnesiPhone2:
+      friendly_name: Courtney
+
+device_tracker:
+  - platform: asuswrt
+    host: 192.168.1.1
+    username: !secret asus_user
+    password: !secret asus_pass
+
+group:
+  Who is home:
+    entities:
+      - device_tracker.jake
+      - device_tracker.jennagihsiphone_2
+      - device_tracker.3c2ef9db0cbf
+      - device_tracker.LaylasiPad2
+      - device_tracker.CourtnesiPhone2
+
+automation:
+  # Home announcements
+  - alias: 'Announce - Andy is home'
+    trigger: 
+      - platform: state
+        entity_id: device_tracker.3c2ef9db0cbf
+        from: 'not_home'
+        to: 'home'
+    action:
+      - service: tts.google_say
+        data:
+          entity_id: media_player.default_speaker
+          message: 'Andy has arrived home'
+      - service: notify.mypushbullet
+        data: 
+          title: "Andy is home"
+          message: "Andy has arrived at home"
+
+
+  - alias: 'Announce - Courtney is home'
+    trigger:
+      - platform: state
+        entity_id: device_tracker.CourtnesiPhone2
+        from: 'not_home'
+        to: 'home'
+    action:
+      - service: tts.google_say
+        data:
+          entity_id: media_player.default_speaker
+          message: 'Courtney has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Courtney is home"
+          message: "Courtney has arrived at home"  
+
+
+  - alias: 'Announce - Layla is home'
+    trigger:
+      platform: state
+      entity_id: device_tracker.laylasipad2
+      from: 'not_home'
+      to: 'home'
+    action:
+      - service: tts.google_say
+        data:
+          entity_id: media_player.default_speaker
+          message: 'Layla Bug has arrived at home'
+      - service: notify.mypushbullet
+        data:
+          title: "Layla is home"
+          message: "Layla has arrived at home"
+
+  - alias: 'Announce - Jake is home'
+    trigger:
+      platform: state
+      entity_id: device_tracker.jake
+      from: 'not_home'
+      to: 'home'
+    action:
+      - service: tts.google_say
+        data:
+          entity_id: media_player.default_speaker
+          message: 'Jake has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Jake is home"
+          message: "Jake has arrived at home"
+
+  - alias: 'Announce - Jenna is home'
+    trigger:
+      platform: state
+      entity_id: device_tracker.jennagihsiphone_2
+      from: 'not_home'
+      to: 'home'
+    action:
+      - service: tts.google_say
+        data:
+          entity_id: media_player.default_speaker
+          message: 'Jenna has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Jenna is home"
+          message: "Jenna has arrived at home"
+
+  # Left home/wifi
+  - alias: 'Announce - Andy has left'
+    trigger: 
+      - platform: state
+        entity_id: device_tracker.3c2ef9db0cbf
+        from: 'home'
+        to: 'not_home'
+    action:
+      #- service: tts.google_say
+      #  data:
+      #    entity_id: media_player.default_speaker
+      #    message: 'Andy has arrived home'
+      - service: notify.mypushbullet
+        data: 
+          title: "Andy has left"
+          message: "Andy has has left the house/wifi"
+
+
+  - alias: 'Announce - Courtney has left'
+    trigger:
+      - platform: state
+        entity_id: device_tracker.CourtnesiPhone2
+        from: 'home'
+        to: 'not_home'
+    action:
+      #- service: tts.google_say
+      #  data:
+      #    entity_id: media_player.default_speaker
+      #    message: 'Courtney has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Courtney has left"
+          message: "Courtney has left the house/wifi"  
+
+
+  - alias: 'Announce - Layla has left'
+    trigger:
+      platform: state
+      entity_id: device_tracker.laylasipad2
+      from: 'home'
+      to: 'not_home'
+    action:
+      #- service: tts.google_say
+      #  data:
+      #    entity_id: media_player.default_speaker
+      #    message: 'Layla Bug has arrived at home'
+      - service: notify.mypushbullet
+        data:
+          title: "Layla has left"
+          message: "Layla has left the house/wifi"
+
+  - alias: 'Announce - Jake has left'
+    trigger:
+      platform: state
+      entity_id: device_tracker.jake
+      from: 'home'
+      to: 'not_home'
+    action:
+     # - service: tts.google_say
+     #   data:
+     #    entity_id: media_player.default_speaker
+     #     message: 'Jake has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Jake has left"
+          message: "Jake has left the house/wifi"
+
+  - alias: 'Announce - Jenna has left'
+    trigger:
+      platform: state
+      entity_id: device_tracker.jennagihsiphone_2
+      from: 'home'
+      to: 'not_home'
+    action:
+      #- service: tts.google_say
+      #  data:
+      #    entity_id: media_player.default_speaker
+      #    message: 'Jenna has arrived home'
+      - service: notify.mypushbullet
+        data:
+          title: "Jenna has left"
+          message: "Jenna has left the house/wifi"
+  - alias: 'Notify - New Device'
+    trigger:
+      platform: event
+      event_type: device_tracker_new_device
+    action:
+      - service: notify.mypushbullet
+        data:
+          title: "New Device Detected"
+          message: 
+            "New Device Tracked: {{trigger.event.data.host_name}}
+             ({{trigger.event.data.entity_id}})"
+ 

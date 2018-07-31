@@ -1,0 +1,4 @@
+media_player:
+  - platform: vlc
+    name: Default Speaker
+    arguments: '--alsa-audio-device=hw:0,0'

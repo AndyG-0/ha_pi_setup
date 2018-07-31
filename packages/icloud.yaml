@@ -1,0 +1,6 @@
+# Disabling due to battery drain
+#device_tracker:
+#  - platform: icloud
+#    username: andy.gilbreath@gmail.com
+#    password: J3nnaAnn
+#    account_name: Andy iCloud
