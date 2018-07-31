@@ -22,6 +22,7 @@ logger:
 recorder:
   purge_interval: 1
   purge_keep_days: 20
+  db_url: postgresql://pi:%5ED3w4aNd@localhost/homeassistant
 
 # Show links to resources in log and frontend
 #introduction:
