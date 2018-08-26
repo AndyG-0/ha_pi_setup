@@ -22,7 +22,7 @@ logger:
 recorder:
   purge_interval: 1
   purge_keep_days: 20
-  db_url: postgresql://pi:%5ED3w4aNd@localhost/homeassistant
+  db_url: postgresql://postgres:postgres@postgres-db/postgres
 
 # Show links to resources in log and frontend
 #introduction:
@@ -73,7 +73,7 @@ tts:
 ffmpeg:
 
 mqtt:
-  broker: 127.0.0.1
+  broker: 192.168.1.91
 
 # display the map
 #map:

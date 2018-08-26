@@ -1,0 +1,3 @@
+FROM pihole/pihole:v4.0_armhf 
+
+RUN  echo -e "127.0.0.1    pi.hole\n" >> /etc/hosts

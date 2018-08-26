@@ -1,0 +1,76 @@
+version: '3.2'
+services:
+  postgres-db:
+    image: 'postgres'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+    volumes: 
+      - /opt/postgres/data:/var/lib/postgresql/data
+  home-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile.HA
+    restart: always
+    ports:
+      - 8123:8123
+    volumes:
+      - /opt/homeassistant:/config
+    depends_on: 
+      - postgres-db
+  homebridge:
+    build:
+      context: .
+      dockerfile: Dockerfile.HOMEBRIDGE
+    container_name: "homebridge_docker"
+    restart: always
+    ports: 
+      - 8080:8080
+      - 51826:51826
+    network_mode: host
+    environment:
+      - TZ=America/New_York
+      - PGID=1000
+      - PUID=1000
+      - HOMEBRIDGE_CONFIG_UI=1
+      - HOMEBRIDGE_CONFIG_UI_PORT=8080
+    volumes:
+      - /opt/homebridge:/homebridge
+    depends_on:
+      - home-assistant
+  # This was not working for some reason. 
+  # pi-hole:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.PIHOLE
+  #   ports:
+  #     - "53:53/tcp"
+  #     - "53:53/udp"
+  #     - "67:67/udp"
+  #     - "80:80/tcp"
+  #     - "443:443/tcp"
+  #   environment:
+  #     # enter your docker host IP here
+  #     ServerIP: 192.168.1.91
+  #     # IPv6 Address if your network supports it
+  #     #ServerIPv6: 192.168.1.55
+  #     # jwilder/proxy envs, see readme for more info
+  #     PROXY_LOCATION: pihole
+  #     VIRTUAL_HOST: pihole.yourdomain.local
+  #     VIRTUAL_PORT: 80
+  #     TZ: America/New York
+  #     WEBPASSWORD: ^D3w4aNd
+  #   # Add your own custom hostnames you need for your domain
+  #   extra_hosts:
+  #     #   Point any of the jwilder virtual_host addresses
+  #     # to your docker host ip address
+  #     - 'pihole.yourdomain.local:192.168.1.91'
+  #   volumes:
+  #     # - '/etc/pihole/:/etc/pihole/'
+  #     # WARNING: if this log don't exist as a file on the host already
+  #     # docker will try to create a directory in it's place making for lots of errors
+  #     # - '/var/log/pihole.log:/var/log/pihole.log'
+  #     - '/opt/pihole:/etc/pihole'
+  #     - '/opt/pihole/dnsmasq:/etc/dnsmasq.d'
+  #   restart: always
