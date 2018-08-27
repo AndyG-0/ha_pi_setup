@@ -37,10 +37,10 @@ automation:
         from: 'not_home'
         to: 'home'
     action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Andy has arrived home'
+      # - service: tts.google_say
+      #   data:
+      #     entity_id: media_player.default_speaker
+      #     message: 'Andy has arrived home'
       - service: notify.mypushbullet
         data: 
           title: "Andy is home"
@@ -54,10 +54,10 @@ automation:
         from: 'not_home'
         to: 'home'
     action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Courtney has arrived home'
+      # - service: tts.google_say
+      #   data:
+      #     entity_id: media_player.default_speaker
+      #     message: 'Courtney has arrived home'
       - service: notify.mypushbullet
         data:
           title: "Courtney is home"
@@ -71,10 +71,10 @@ automation:
       from: 'not_home'
       to: 'home'
     action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Layla Bug has arrived at home'
+      # - service: tts.google_say
+      #   data:
+      #     entity_id: media_player.default_speaker
+      #     message: 'Layla Bug has arrived at home'
       - service: notify.mypushbullet
         data:
           title: "Layla is home"
@@ -87,10 +87,10 @@ automation:
       from: 'not_home'
       to: 'home'
     action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Jake has arrived home'
+      # - service: tts.google_say
+      #   data:
+      #     entity_id: media_player.default_speaker
+      #     message: 'Jake has arrived home'
       - service: notify.mypushbullet
         data:
           title: "Jake is home"
@@ -103,10 +103,10 @@ automation:
       from: 'not_home'
       to: 'home'
     action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Jenna has arrived home'
+      # - service: tts.google_say
+      #   data:
+      #     entity_id: media_player.default_speaker
+      #     message: 'Jenna has arrived home'
       - service: notify.mypushbullet
         data:
           title: "Jenna is home"

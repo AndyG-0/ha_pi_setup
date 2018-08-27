@@ -1,0 +1,46 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "033-45-152"
+    },
+    "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
+    "platforms": [
+        {
+            "platform": "HomeAssistant",
+            "name": "HomeAssistant",
+            "host": "http://192.168.1.91:8123",
+            "password": "httpapipass122275",
+            "supported_types": [
+                "binary_sensor",
+                "climate",
+                "cover",
+                "device_tracker",
+                "fan",
+                "group",
+                "input_boolean",
+                "light",
+                "lock",
+                "media_player",
+                "remote",
+                "scene",
+                "script",
+                "sensor",
+                "switch",
+                "vacuum"
+            ],
+            "default_visibility": "visible",
+            "logging": true,
+            "verify_ssl": true
+        }
+    ],
+    "accessories": [
+        {
+            "accessory": "Chamberlain",
+            "name": "Garage Door",
+            "username": "andy.gilbreath@gmail.com",
+            "password": "J3nnaAnn^D3w4aNd"
+        }
+    ]
+}

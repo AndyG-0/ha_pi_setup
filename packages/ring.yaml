@@ -29,21 +29,21 @@ group:
       - binary_sensor.ring_Front_Door_Motion
       - binary_sensor.ring_Front_Door_Ding
 
-automation:
+# automation:
 
-  - alias: 'announce someone at front door'
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.ring_front_door_motion
-        from: 'off'
-        to: 'on'
+#   - alias: 'announce someone at front door'
+#     trigger:
+#       - platform: state
+#         entity_id: binary_sensor.ring_front_door_motion
+#         from: 'off'
+#         to: 'on'
 
-    action:
-      - service: tts.google_say
-        data:
-          entity_id: media_player.default_speaker
-          message: 'Attention! Someone is at the front door!'
-      - service: notify.mypushbullet
-        data_template:
-          title: "Front door activity"
-          message: "Attention! Someone is at the front door!"
+#     action:
+#       - service: tts.google_say
+#         data:
+#           entity_id: media_player.default_speaker
+#           message: 'Attention! Someone is at the front door!'
+#       - service: notify.mypushbullet
+#         data_template:
+#           title: "Front door activity"
+#           message: "Attention! Someone is at the front door!"

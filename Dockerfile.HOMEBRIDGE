@@ -1,3 +1,4 @@
 FROM oznu/homebridge:raspberry-pi
 
 RUN npm install -g homebridge-homeassistant
+RUN npm i -g homebridge-chamberlain

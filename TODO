@@ -1,0 +1,9 @@
+* Break this project up into different projects. Right now this has everything on the pi. The backup and setup scripts should be moved. 
+* Setup Jenkins on Docker?
+* Setup gitlab
+* Add numerous homebridge components
+* Consider a clean shutdown script and maybe reboot. See how it goes for now. 
+* Put MQTT in container
+* More work on pihole in a container even though didn't work the first time. 
+* Remove sound from scripts as not working. 
+* Switch to Kubernetes

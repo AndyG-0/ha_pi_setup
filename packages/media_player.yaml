@@ -1,4 +1,5 @@
-media_player:
-  - platform: vlc
-    name: Default Speaker
-    arguments: '--alsa-audio-device=hw:0,0'
+# Eliminated as it was getting annoying and is not working now that it's in a container.. 
+#media_player:
+#  - platform: vlc
+#    name: Default Speaker
+#    arguments: '--alsa-audio-device=hw:0,0'
