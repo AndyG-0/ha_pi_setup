@@ -1,7 +1,8 @@
-Add Nest plugin - https://libraries.io/npm/homebridge-nest
-Add Bravia plugin - https://www.npmjs.com/package/homebridge-bravia-tv
-Add Roku plugin - https://libraries.io/npm/homebridge-roku
-Add AppleTV plugin? - https://libraries.io/npm/homebridge-apple-tv
-Add Samsung TV plugin - https://libraries.io/npm/homebridge-samsungtv
-Add lifx plugin - https://libraries.io/npm/homebridge-lifx
+DONE: Add Nest plugin - https://libraries.io/npm/homebridge-nest
+ISSUES with PIN: Add Bravia plugin - https://www.npmjs.com/package/homebridge-bravia-tv
+DONE(for 2):Add Roku plugin - https://libraries.io/npm/homebridge-roku
+Add AppleTV plugin? - https://www.npmjs.com/package/homebridge-dacp
+Add Samsung TV plugin - https://www.npmjs.com/package/homebridge-samsung-tizen
+DONE: Add lifx plugin - https://www.npmjs.com/package/homebridge-lifx-lan
+Split compose into separate file isolated from homeassistant. 
 

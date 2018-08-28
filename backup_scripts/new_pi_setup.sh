@@ -35,13 +35,14 @@ cp ./smb.conf /etc/samba/smb.conf
 curl -sSL https://install.pi-hole.net | bash
 
 # add mount for libreelec
-echo -e "//192.168.1.108/FantomHD/ /mnt/FantomHD -o username=[root],password=[libreelec],rw" >> /etc/fstab
+# (MUST DO THIS FOR IT TO WORK:) Must enable wait for network connection on boot in sudo raspi-config for this to work
+echo -e "//192.168.1.108/FantomHD/ /mnt/FantomHD cifs rw,cache=strict,username=[root],password=[libreelec],domain=,uid=0,gid=0,file_mode=0755,dir_mode=0755,soft,nounix,serverino,rsize=1048576,wsize=1048576,actimeo=1" >> /etc/fstab
 
 # add job to crontab
 #write out current crontab
 crontab -l > mycron
 #echo new cron into cron file
-echo "00 09 * * * /opt/homeassistant/backup_scripts/rsync_backup.sh" >> mycron
+echo "30 3 * * * /opt/homeassistant/backup_scripts/rsync_backup.sh" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
