@@ -46,3 +46,5 @@ echo "30 3 * * * /opt/homeassistant/backup_scripts/rsync_backup.sh" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
+
+# To fix potential dns issues in the container add daemon.json to /etc/docker/ 

@@ -15,6 +15,8 @@ services:
     restart: always
     ports:
       - 8123:8123
+    environment:
+      - TZ=America/New_York
     volumes:
       - /opt/homeassistant:/config
     depends_on: 

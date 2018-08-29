@@ -5,4 +5,5 @@ Add AppleTV plugin? - https://www.npmjs.com/package/homebridge-dacp
 Add Samsung TV plugin - https://www.npmjs.com/package/homebridge-samsung-tizen
 DONE: Add lifx plugin - https://www.npmjs.com/package/homebridge-lifx-lan
 Split compose into separate file isolated from homeassistant. 
+Add camera plugin
 

@@ -7,4 +7,4 @@
 * More work on pihole in a container even though didn't work the first time. 
 * DONE: Remove sound from scripts as not working. 
 * Switch to Kubernetes
-* 
+* Fix mail scripts
