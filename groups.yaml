@@ -1,6 +1,0 @@
-#over_view:
-#  view: yes
-#  name: Overview
-#  icon: mdi:account-multiple
-#  entities:
-#    - group.Who_is_home
