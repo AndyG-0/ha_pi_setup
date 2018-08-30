@@ -10,7 +10,7 @@
 echo "Backing up FantomHD" >> backup.log
 
 # copy the files to the mounted remote drive using rsync
-rsync -auv --exclude-from='./exclude_files.txt' /mnt/FantomHD/ /media/pi/Elements/Fantom_backup/ > fantom_backup.log
+rsync -auv --exclude-from='/opt/ha_pi_setup/exclude_files.txt' /mnt/FantomHD/ /media/pi/Elements/Fantom_backup/ > fantom_backup.log
 
 echo "Done backing up FantomHD" >> backup.log
 

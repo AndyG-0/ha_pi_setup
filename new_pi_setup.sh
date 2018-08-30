@@ -7,7 +7,6 @@ sudo mkdir /opt/homeassistant/
 sudo mkdir /opt/hombridge/
 sudo mkdir /opt/postgres/
 
-
 # docker stuff
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo groupadd docker
@@ -21,8 +20,17 @@ sudo curl -L https://github.com/mjuu/rpi-docker-compose/blob/master/v1.12.0/dock
 # for now install mosquitto
 sudo apt-get install mosquitto
 
-cp ./docker-compose-app.service /etc/systemd/system/
-systemctl enable docker-compose-app
+sudo cp /opt/homeassistant/docker-compose-homeassistant.service /etc/systemd/system/
+sudo cp /opt/homebridge/docker-compose-homebridge.service /etc/systemd/system/
+sudo systemctl --system daemon-reload
+sudo systemctl enable docker-compose-homeassistant
+sudo systemctl enable docker-compose-homebridge
+
+# usps stuff
+# Due to issues with running python script in container, run python for usps locally and use imagemagick
+sudo apt-get install imagemagick
+sudo cp ./usps.service /etc/systemd/system/
+sudo systemctl enable usps
 
 # samba stuff
 sudo apt-get install ntfs-3g -y
@@ -48,3 +56,8 @@ crontab mycron
 rm mycron
 
 # To fix potential dns issues in the container add daemon.json to /etc/docker/ 
+
+# start it all
+sudo systemctl start usps
+sudo systemctl start docker-compose-homebridge
+sudo systemctl start docker-compose-homeassistant
