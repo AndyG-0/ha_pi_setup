@@ -7,6 +7,9 @@
 # mount the drive vs connecting externally
 #sudo mount //192.168.1.108/FantomHD/ /mnt/FantomHD -o username=[root],password=[libreelec],rw >> backup.log
 
+# Mount is in the fstab but re-mount in case not mounted.
+sudo mount --all
+
 echo "Backing up FantomHD" >> backup.log
 
 # copy the files to the mounted remote drive using rsync
