@@ -13,6 +13,15 @@ sudo echo "cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory" | sudo tee
 
 curl -sfL https://get.k3s.io | K3S_URL=${K3S_URL} K3S_TOKEN=${NODE_TOKEN} sh -
 
+
+# get cert from registry https
+openssl s_client -connect registry-192.168.1.38:443 -showcerts > registry-ingress.crt
+
+sudo mkdir -p /usr/local/share/ca-certificates/myregistry
+sudo cp registry-ingress.crt /usr/local/share/ca-certificates/myregistry/registry-ingress.crt
+sudo update-ca-certificates
+cp ./registries.yaml /etc/rancher/registries.yaml
+
 #### Optionals ####
 
 # copy over kube config assumes config exists in pi directory on master
