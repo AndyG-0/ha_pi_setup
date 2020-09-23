@@ -1,0 +1,10 @@
+mirrors:
+  registry-192.168.1.38.nip.io:
+    endpoint:
+      - "https://registry-192.168.1.38.nip.io"
+configs:
+  "https://registry-192.168.1.38.nip.io":
+    tls:
+     cert_file: /etc/k8sCerts/registry-ingress.crt # path to the cert file used in the registry
+     key_file: /etc/k8sCerts/registry-ingress.key  # path to the key file used in the registry
+     ca_file:  /etc/ssl/certs/ca-certificates.crt  # path to the ca file used in the registry

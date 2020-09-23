@@ -1,1 +1,0 @@
-30 3 * * * /opt/homeassistant/backup_scripts/rsync_backup.sh
