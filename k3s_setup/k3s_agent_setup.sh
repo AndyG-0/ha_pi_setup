@@ -27,3 +27,6 @@ cp ./registries.yaml /etc/rancher/registries.yaml
 # copy over kube config assumes config exists in pi directory on master
 mkdir /home/pi/.kube/
 scp pi@${K3S_MASTER_IP}:/home/pi/.kube/config ~/.kube/config
+# replace localhost ip with 192.168.1.38
+LOCALHOST_IP="127.0.0.1"
+sed -i -r "s/$LOCALHOST_IP([^0-9])+/$K3S_MASTER_IP/g" ~/.kube/config
