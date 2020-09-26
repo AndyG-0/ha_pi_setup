@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # NOTE: You have never tested this. Work through the bugs the next time a pi dies. 
+# Need to run pre_k3s_setup.sh and reboot before running.
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
-
-sudo echo "cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory" | sudo tee -a /boot/cmdline.txt
 
 curl -sfL https://get.k3s.io | sh -
 

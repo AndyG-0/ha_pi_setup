@@ -5,11 +5,10 @@ K3S_URL=https://192.168.1.38:6443
 K3S_MASTER_IP=192.168.1.38
 
 # NOTE: You have never tested this. Work through the bugs the next time a pi dies. 
+# Need to run pre_k3s_setup.sh and reboot before running.
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
-
-sudo echo "cgroup_enable=cpuset cgroup_memory=1 cgroup_enable=memory" | sudo tee -a /boot/cmdline.txt
 
 curl -sfL https://get.k3s.io | K3S_URL=${K3S_URL} K3S_TOKEN=${NODE_TOKEN} sh -
 
