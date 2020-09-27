@@ -19,7 +19,7 @@ openssl s_client -connect registry-192.168.1.38:443 -showcerts > registry-ingres
 sudo mkdir -p /usr/local/share/ca-certificates/myregistry
 sudo cp registry-ingress.crt /usr/local/share/ca-certificates/myregistry/registry-ingress.crt
 sudo update-ca-certificates
-cp ./registries.yaml /etc/rancher/registries.yaml
+sudo cp ./registries.yaml /etc/rancher/registries.yaml
 
 #### Optionals ####
 
