@@ -14,12 +14,15 @@ curl -sfL https://get.k3s.io | K3S_URL=${K3S_URL} K3S_TOKEN=${NODE_TOKEN} sh -
 
 
 # get cert from registry https
-openssl s_client -connect registry-192.168.1.38:443 -showcerts > registry-ingress.crt
+openssl s_client -connect registry-192.168.1.38.nip.io:443 -showcerts > registry-ingress.crt
 
 sudo mkdir -p /usr/local/share/ca-certificates/myregistry
 sudo cp registry-ingress.crt /usr/local/share/ca-certificates/myregistry/registry-ingress.crt
 sudo update-ca-certificates
-sudo cp ./registries.yaml /etc/rancher/registries.yaml
+sudo cp ./registries.yaml /etc/rancher/k3s/registries.yaml
+
+# restart k3s
+sudo systemctl restart k3s-agent
 
 #### Optionals ####
 
