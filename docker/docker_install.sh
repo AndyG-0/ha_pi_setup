@@ -5,11 +5,11 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo groupadd docker
 sudo gpasswd -a "$USER" docker
 
-system enable docker
+sudo systemctl enable docker
 
 # add current user to docker group and reload
 sudo usermod -a -G docker "$USER"
-sudo exec su -l "$USER"
+sudo su -l "$USER"
 
 # add daemon.json
 sudo cp ./daemon.json /etc/docker/daemon.json
