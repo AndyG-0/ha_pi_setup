@@ -19,6 +19,7 @@ openssl s_client -connect registry-192.168.1.38.nip.io:443 -showcerts > registry
 sudo mkdir -p /usr/local/share/ca-certificates/myregistry
 sudo cp registry-ingress.crt /usr/local/share/ca-certificates/myregistry/registry-ingress.crt
 sudo update-ca-certificates
+sudo mkdir -p /etc/rancher/k3s/
 sudo cp ./registries.yaml /etc/rancher/k3s/registries.yaml
 
 # restart k3s
