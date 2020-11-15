@@ -1,0 +1,2 @@
+UUID=0A5DD4543FDF14C4 /media/mybook   ntfs defaults,auto,users,rw,nofail,umask=000,x-systemd.device-timeout=30   0   0
+UUID=A4C40EE4C40EB916 /media/elements ntfs defaults,auto,users,rw,nofail,umask=000,x-systemd.device-timeout=30  0  0
