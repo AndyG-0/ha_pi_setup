@@ -21,9 +21,6 @@ git clone git@github.com:AndyG-0/docker-registry.git
 cd docker-registry || exit
 helm install registry .
 
-# take a nap while kube settles
-sleep 60 
-
 sudo mkdir -p /etc/rancher/k3s/
 sudo cp ./registries.yaml /etc/rancher/k3s/registries.yaml
 
