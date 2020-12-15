@@ -33,7 +33,7 @@ sed -i -r "s/andy([^0-9])+/$(whoami)/g" ~/.kube/config
 cp ./.zshrc ~/.zshrc
 
 # Make vim pretty
-sudo apt-get upgrade vim
+sudo apt-get upgrade -y vim
 cp ./.vimrc ~/.vimrc
 
 cd "$script_home" || exit
