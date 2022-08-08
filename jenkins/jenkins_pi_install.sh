@@ -11,7 +11,7 @@ sh ../docker/docker_install.sh
 echo "Installing Jenkins ..."
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 
-sudo deb https://pkg.jenkins.io/debian binary/ >> /etc/apt/sources.list.d/jenkins.list
+echo deb https://pkg.jenkins.io/debian binary/ >> /etc/apt/sources.list.d/jenkins.list
 sudo apt update && sudo apt install -y openjdk-11-jre && sudo apt-get install -y jenkins
 
 echo "Jenkins installed. initialAdminPassword:"

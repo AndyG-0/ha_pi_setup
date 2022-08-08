@@ -55,6 +55,10 @@ Create file:  `/etc/docker/daemon.json` on each worker node. (Might be all?)
   "insecure-registries" : ["registry-192.168.1.38.nip.io"]
 }
 ```
+## setting up iptables
+`sudo apt install iptables -y && sudo iptables -F && sudo update-alternatives --set iptables /usr/sbin/iptables-legacy && sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy && sudo reboot` 
+
+Ref: [https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux](https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux)
 
 
 

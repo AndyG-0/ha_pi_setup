@@ -10,7 +10,7 @@ curl -sfL https://get.k3s.io | sh -
 
 # kubeconfig for pi user
 mkdir ~/.kube
-sudo cp /etc/rancher/k3s.yaml ~/.kube/config
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chown pi:pi ~/.kube/config
 
 # install helm for next step

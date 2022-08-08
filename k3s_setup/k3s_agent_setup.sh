@@ -10,7 +10,7 @@ K3S_MASTER_IP=192.168.1.38
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-curl -sfL https://get.k3s.io | sudo K3S_URL=${K3S_URL} K3S_TOKEN=${NODE_TOKEN} sh -
+curl -sfL https://get.k3s.io | K3S_URL=${K3S_URL} K3S_TOKEN=${NODE_TOKEN} sh -
 
 sudo mkdir -p /etc/rancher/k3s/
 sudo cp ./registries.yaml /etc/rancher/k3s/registries.yaml
