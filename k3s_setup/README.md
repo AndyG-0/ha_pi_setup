@@ -28,7 +28,24 @@ NODE_TOKEN can be found at `/var/lib/rancher/k3s/server/node-token`
 
 ## Setup nginx Loadbalancer
 
-See: `https://serversforhackers.com/c/tcp-load-balancing-with-nginx-ssl-pass-thru`
+See: `https://serversforhackers.com/c/tcp-load-balancing-with-nginx-ssl-pass-thru` and `https://www.cyberciti.biz/faq/configure-nginx-ssltls-passthru-with-tcp-load-balancing/`
+
+```
+stream {
+        upstream kube_main_servers {
+                server 192.168.1.91:6443;
+                server 192.168.1.92:6443;
+        }
+
+        server {
+                listen  16443;
+                proxy_pass kube_main_servers;
+                proxy_next_upstream on;
+        }
+}
+```
+
+*NOTES:* Remove http to stop the http server from running. Must leave lines outside of http section. 
 
 ## Adding worker/agent nodes
 
